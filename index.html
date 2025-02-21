@@ -74,6 +74,10 @@
             let y = Math.random() * (window.innerHeight - 100);
             btn.style.left = x + "px";
             btn.style.top = y + "px";
+
+            // Pop-up messages when hovering
+            let messages = ["Nice try.", "Catch me if you can!", "Too slow!", "Skill issue.", "Better luck next time!"];
+            alert(messages[Math.floor(Math.random() * messages.length)]);
         });
 
         // Random color generator
@@ -104,6 +108,19 @@
                 setTimeout(() => window.close(), 1000);
             }, 3000);
         }, 22000);
+
+        // Diddy Brainrot Mode: Flash Cursed Diddy Kong Images
+        setInterval(() => {
+            let diddyImages = [
+                "https://media.tenor.com/ZWjORwBcdlMAAAAd/diddy-kong.gif",
+                "https://i.kym-cdn.com/photos/images/newsfeed/002/281/032/448.jpg",
+                "https://media.tenor.com/14hyHzA4mBgAAAAC/diddy-kong-donkey-kong.gif",
+                "https://i.imgflip.com/5yxbpe.png"
+            ];
+            let randomDiddy = diddyImages[Math.floor(Math.random() * diddyImages.length)];
+            document.body.style.backgroundImage = `url(${randomDiddy})`;
+            document.body.style.backgroundSize = "cover";
+        }, 5000);
     </script>
 </body>
 </html>
