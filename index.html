@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Tools</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { padding: 10px 20px; font-size: 18px; cursor: pointer; margin: 10px; position: relative; }
+        #movingButton { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Ultimate Productivity Suite!</h1>
+    <p>Select a tool to get started:</p>
+
+    <button onclick="rickroll()">Generate QR Code</button>
+    <button onclick="rickroll()">AI Resume Builder</button>
+    <button id="movingButton" onclick="rickroll()">Click Me!</button>
+
+    <p id="fakeLoading" style="display:none;">Downloading more RAM… please wait...</p>
+
+    <script>
+        function rickroll() {
+            document.getElementById("fakeLoading").style.display = "block";
+            setTimeout(() => {
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            }, 3000); // Fake loading delay
+        }
+
+        // Moving button (it escapes when you hover over it)
+        let btn = document.getElementById("movingButton");
+        btn.addEventListener("mouseover", function () {
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            btn.style.position = "absolute";
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        });
+
+        // Keyboard Trap - Any key press plays the Rickroll
+        document.addEventListener("keydown", function () {
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        });
+    </script>
+</body>
+</html>
