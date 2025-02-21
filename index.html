@@ -3,29 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Useful Tools</title>
+    <title>Pajama Services</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        button { padding: 10px 20px; font-size: 18px; cursor: pointer; margin: 10px; position: relative; }
-        #movingButton { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to bottom, #b5d3e7, #8a7cd6); /* Cozy blue-purple gradient */
+            color: white;
+        }
+        h1 {
+            font-size: 36px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+        p {
+            font-size: 20px;
+        }
+        .cloud-button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: #fce4ec;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .cloud-button:hover {
+            background-color: #ffc1e3;
+            transform: scale(1.1);
+        }
+        #movingButton {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffe082;
+        }
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/oSm3n2h.png') repeat;
+            opacity: 0.3;
+            animation: float 10s infinite alternate;
+        }
+        @keyframes float {
+            from { transform: translateY(0px); }
+            to { transform: translateY(20px); }
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Ultimate Productivity Suite!</h1>
-    <p>Select a tool to get started:</p>
+    <div class="stars"></div>
+    <h1>Welcome to Pajama Productivity Suite 💤</h1>
+    <p>Boost your efficiency while staying comfy. Select a tool to get started:</p>
 
-    <button onclick="rickroll()">Generate QR Code</button>
-    <button onclick="rickroll()">AI Resume Builder</button>
-    <button id="movingButton" onclick="rickroll()">Click Me!</button>
+    <button class="cloud-button" onclick="rickroll()">Generate QR Code</button>
+    <button class="cloud-button" onclick="rickroll()">AI Resume Builder</button>
+    <button class="cloud-button" id="movingButton" onclick="rickroll()">Click Me!</button>
 
-    <p id="fakeLoading" style="display:none;">Downloading more RAM… please wait...</p>
+    <p id="fakeLoading" style="display:none; font-style: italic;">Downloading more RAM... Grab a pillow while you wait...</p>
 
     <script>
         function rickroll() {
             document.getElementById("fakeLoading").style.display = "block";
             setTimeout(() => {
                 window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-            }, 3000); // Fake loading delay
+            }, 3000);
         }
 
         // Moving button (it escapes when you hover over it)
