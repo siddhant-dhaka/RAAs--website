@@ -22,11 +22,24 @@
             transition: transform 0.2s, left 0.5s, top 0.5s;
         }
         #movingButton { 
-            background-color: #ffcc00;
+            background-color: #ff5733; 
+            color: white; 
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px 40px; 
+            border: none; 
+            border-radius: 50px; 
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+            transition: all 0.3s ease, left 0.5s, top 0.5s;
             position: absolute; 
             left: 50%; 
             top: 50%; 
             transform: translate(-50%, -50%);
+        }
+        #movingButton:hover {
+            background-color: #ff2e00; 
+            transform: scale(1.1);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
         }
         .countdown {
             font-size: 50px;
@@ -96,20 +109,12 @@
 
         setInterval(() => { document.body.style.backgroundColor = getRandomColor(); }, 200);
 
-        document.addEventListener("mousemove", function(event) {
-            if (Math.random() > 0.9) { window.scrollBy(-event.movementX * 2, -event.movementY * 2); }
-        });
-
         function getRandomColor() {
             const letters = "0123456789ABCDEF";
             let color = "#";
             for (let i = 0; i < 6; i++) { color += letters[Math.floor(Math.random() * 16)]; }
             return color;
         }
-
-        document.addEventListener("keydown", function () {
-            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-        });
 
         setTimeout(() => {
             let countdown = document.getElementById("countdown");
@@ -131,22 +136,6 @@
             }
             alert("🔥 Your browser has been INFECTED with Rick Astley! 🔥");
         }
-
-        setInterval(() => {
-            let diddyImages = [
-                "https://media.tenor.com/ZWjORwBcdlMAAAAd/diddy-kong.gif",
-                "https://i.kym-cdn.com/photos/images/newsfeed/002/281/032/448.jpg",
-                "https://media.tenor.com/14hyHzA4mBgAAAAC/diddy-kong-donkey-kong.gif",
-                "https://i.imgflip.com/5yxbpe.png"
-            ];
-            let randomDiddy = diddyImages[Math.floor(Math.random() * diddyImages.length)];
-            document.body.style.backgroundImage = `url(${randomDiddy})`;
-            document.body.style.backgroundSize = "cover";
-        }, 2000);
-
-        let audio = new Audio("https://www.myinstants.com/media/sounds/diddy-kong.mp3");
-        setInterval(() => { audio.play(); }, 3000);
-
     </script>
 </body>
 </html>
